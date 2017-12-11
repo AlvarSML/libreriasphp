@@ -11,10 +11,8 @@ function ordenar($array){
 		$indiceMenor = $i;
 		for ($j=$i+1;$j<count($array);$j++){
 			
-			if ($array[$j]< $array[$indiceMenor]){
-				
-				$indiceMenor =$j;
-				
+			if ($array[$j]< $array[$indiceMenor]){				
+				$indiceMenor =$j;				
 			}
 		}
 		if ($i != $indiceMenor){
