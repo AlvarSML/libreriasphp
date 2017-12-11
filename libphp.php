@@ -5,11 +5,11 @@
   }
 
 
-function ordenar($array, $numElementos){
+function ordenar($array){
 	
-	for ($i=0;$i<$numElementos;$i++){
+	for ($i=0;$i<count($array);$i++){
 		$indiceMenor = $i;
-		for ($j=$i+1;j<$numElementos;$j++){
+		for ($j=$i+1;$j<count($array);$j++){
 			
 			if ($array[$j]< $array[$indiceMenor]){
 				
@@ -25,6 +25,7 @@ function ordenar($array, $numElementos){
 		}
 		
 	}
+  return $array;
 	
 }
 
