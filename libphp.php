@@ -18,6 +18,8 @@ function addOrdenado($value,$arr) {
         $value = $aux;
       }
     }
+
+    $arr[count($arr) + 1] = $value;
   }
 
   return $arr;
