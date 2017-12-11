@@ -6,9 +6,6 @@
 
 
 function ordenar($array, $numElementos){
-$indiceMenor;
-$j;
-$aux;
 	
 	for ($i=0;$i<$numElementos;$i++){
 		$indiceMenor = $i;
