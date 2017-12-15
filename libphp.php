@@ -48,4 +48,22 @@ function addOrdenado($value,$arr) {
   return $arr;
 }
 
+function registrar($usuario,$pass,$usuarios,$passwds){
+  if ($usuario != "" && $pass != "") {
+    array_push($usuarios,$usuario);
+    array_push($passwds,$pass);
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function verArray($arr){
+  for ($i=0; $i < count($arr); $i++) { 
+    echo (strval($i).": ".strval($arr[$i])."<br>");
+  }
+}
+
+verArray([1,2,3,4]);
+
 ?>
