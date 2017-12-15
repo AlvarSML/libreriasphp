@@ -81,5 +81,78 @@ function verArray($arr){
   }
 }
 
+// ALGORITMO BURBUJA
+function burbuja($A,$n)
+{
+    for($i=1;$i<$n;$i++)
+    {
+        for($j=0;$j<$n-$i;$j++)
+        {
+            if($A[$j]>$A[$j+1]){
+                $k=$A[$j+1];
+                $A[$j+1]=$A[$j];
+                $A[$j]=$k;
+            }
+        }
+    }
+
+    return $A;
+}
+
+//inserccion biaria
+function insercionBinaria($A,$n)
+{
+    for($i=1;$i<$n;$i++)
+    {
+        $aux = $A[$i];
+        $izq=0;
+        $der=$i-1;
+        
+        while($izq<=$der)
+        {
+            $m=(($izq+$der)/2);
+            if ($aux<$A[$m])
+                $der=$m-1;
+            else
+                $izq=$m+1;
+        }
+        $j=$i-1;
+        
+        while($j>=$izq)
+        {
+            $A[$j+1]=$A[$j];
+            $j=$j-1;
+        }
+        $A[$izq]=$aux;
+    }
+    
+    return $A;
+}
+
+//ordenacion por shell
+function ordenamientoShell($A,$n)
+{
+  for($inc = 1 ; $inc<$n;$inc=$inc*3+1);
+   
+    while ($inc > 0)
+    {
+      for ($i=$inc; $i < $n; $i++)
+      {
+        $j = $i;
+        $temp = $A[$i];
+        while (($j >= $inc) && ($A[$j-$inc] > $temp))
+        {
+          $A[$j] = $A[$j - $inc];
+          $j = $j - $inc;
+        }
+        
+        $A[$j] = $temp;
+      }
+      
+      $inc/= 2;
+    }
+    
+    return $A;
+  }
 ?>
 
