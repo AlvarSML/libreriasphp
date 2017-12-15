@@ -4,6 +4,23 @@
     return ($passwds[$index] == $pass && $usuario != "");
   }
 
+//Autentificacion con un array de 2 dimensiones
+/* EJEMPLO DE ARRAY
+$usuarios = [ //Mismo usurio y pass
+    ["admin1","Admin1", "administrador"],
+    ["prof1", "Prof1", "profesor"],
+    ["alum1", "Alumno", "alumumno"]
+];*/
+
+function autenticar($nombre, $pass, $array){ //Se le pasa el array por parametro porque no reconoce el array de fuera de la funcion aunque lo nombres igual
+    for($i = 0; $i < sizeof($array); $i++){
+        if($nombre == $array[$i][0] && $pass == $array[$i][1]){           
+            $_SESSION['usuario_valido'] = $nombre;
+            $_SESSION['rol'] = $array[$i][2];
+        }
+    }
+}
+
 
 function ordenar($array){
 	
@@ -65,3 +82,4 @@ function verArray($arr){
 }
 
 ?>
+
