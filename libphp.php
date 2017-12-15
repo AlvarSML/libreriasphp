@@ -64,6 +64,4 @@ function verArray($arr){
   }
 }
 
-verArray([1,2,3,4]);
-
 ?>
